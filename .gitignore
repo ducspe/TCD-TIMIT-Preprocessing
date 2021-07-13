@@ -1,2 +1,4 @@
 venv/
 *_dataout/
+.idea/
+__pycache__/
