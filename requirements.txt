@@ -1,0 +1,11 @@
+numpy
+scipy
+h5py
+torch
+torchvision
+librosa
+tqdm
+opencv-python
+dlib
+scikit-video
+ffmpeg-python
