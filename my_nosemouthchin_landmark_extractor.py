@@ -96,6 +96,7 @@ def my_processing_per_cpu_process(speaker_sublist):
 
                     nmc_landmarks_arr[count_frame] = np.vstack((np.nan_to_num(landmarks_arr[nose_start_roi_index:nose_end_roi_index]), np.nan_to_num(landmarks_arr[mouth_start_roi_index:mouth_end_roi_index]), np.nan_to_num(landmarks_arr[chin_start_roi_index:chin_end_roi_index])))
                     # print("nmc arr shape: ", nmc_landmarks_arr.shape)  # prints 46, which is correct
+
                     # Plot to see correctness:
                     #
                     # image_copy = frame.copy()
@@ -150,7 +151,7 @@ if __name__ == "__main__":
                     args=(split_list,))
         p.start()
         processes.append(p)
-        # p.join()  # if this join is uncommented than the multicore preprocessing is transformed to just single core sequential processing.
+        # p.join()  # if this join is uncommented then the multicore preprocessing is transformed to just single core sequential processing.
 
     for proc in processes:
         proc.join()

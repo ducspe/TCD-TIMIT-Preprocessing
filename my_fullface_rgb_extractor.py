@@ -137,7 +137,6 @@ def my_processing_per_cpu_process(speaker_sublist):
             np.save(dda_gray_fullface_path, dda_fullface_file_reread[:, :, :, 0])  # this is saved as uint8
 
             #############################################   VERIFY   ###################################################
-            ############################################################################################################
 
             # Next code is for adding white squares on video frames and audio channel to mp4 to verify qualitatively if the person is speaking or not.
             video_writer_white = skvideo.io.FFmpegWriter(dda_gray_fullface_video.replace(".mp4", "_white.mp4"),

@@ -218,7 +218,6 @@ def my_processing_per_cpu_process(speaker_sublist):
             np.save(dda_gray_nmc_roi_path, dda_nmc_file_reread[:, :, :, 0])  # this is saved as uint8
 
             #############################################   VERIFY   ###################################################
-            ############################################################################################################
 
             # Next code is for adding white squares on video frames and audio channel to mp4 to verify qualitatively if the person is speaking or not.
             video_writer_white = skvideo.io.FFmpegWriter(dda_gray_nmc_roi_video.replace(".mp4", "_white.mp4"),
@@ -280,7 +279,7 @@ if __name__ == "__main__":
                     args=(split_list,))
         p.start()
         processes.append(p)
-        # p.join()  # if this join is uncommented than the multicore preprocessing is transformed to just single core sequential processing.
+        # p.join()  # if this join is uncommented then the multicore preprocessing is transformed to just single core sequential processing.
 
     for proc in processes:
         proc.join()
